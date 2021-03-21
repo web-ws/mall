@@ -27,7 +27,7 @@ public interface SmsHomeNewProductService {
     int delete(List<Long> ids);
 
     /**
-     * 批量更新推荐状态
+     * 更新推荐状态
      */
     int updateRecommendStatus(List<Long> ids, Integer recommendStatus);
 

@@ -24,8 +24,7 @@ public class PortalBrandController {
 
     @Autowired
     private PortalBrandService homeBrandService;
-
-    @ApiOperation("分页获取推荐品牌")
+    @ApiOperation(value = "分页获取推荐品牌", notes = "分页获取推荐品牌")
     @RequestMapping(value = "/recommendList", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult<List<PmsBrand>> recommendList(@RequestParam(value = "pageSize", defaultValue = "6") Integer pageSize,

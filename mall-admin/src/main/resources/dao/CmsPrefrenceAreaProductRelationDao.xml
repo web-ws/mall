@@ -8,4 +8,28 @@
             #{item.productId,jdbcType=BIGINT})
         </foreach>
     </insert>
+
+    <!-- sql片段的使用：include:引入sql片段,refid引入片段id -->
+    <include refid="user_column"/>
+    FROM USER
+    <!-- 演示动态sql-foreach标签的使用情景 -->
+    <select id="getUserByIds" parameterType="queryvo" esultType="com.itheima.mybatis.pojo.User">
+        SELECT
+        *
+        FROM USER
+        <!-- where会自动加上where同处理多余的and -->
+        <where>
+            <!—拼接：id IN(1,10,25,30,34) -->
+            <!-- foreach循环标签
+            collection:要遍历的集合，来源入参
+            open:循环开始前的sql
+            separator:分隔符
+            close:循环结束拼接的sql
+            -->
+            <foreach item="uid" collection="ids" open="id IN(" separator="," close=")">
+                #{uid}
+            </foreach>
+        </where>
+    </select>
+
 </mapper>

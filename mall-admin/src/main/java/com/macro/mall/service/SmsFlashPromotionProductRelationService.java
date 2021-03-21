@@ -18,7 +18,7 @@ public interface SmsFlashPromotionProductRelationService {
     int create(List<SmsFlashPromotionProductRelation> relationList);
 
     /**
-     * 修改关联信息
+     * 修改关联相关信息
      */
     int update(Long id, SmsFlashPromotionProductRelation relation);
 
@@ -42,8 +42,9 @@ public interface SmsFlashPromotionProductRelationService {
 
     /**
      * 根据活动和场次id获取商品关系数量
-     * @param flashPromotionId        限时购id
-     * @param flashPromotionSessionId 限时购场次id
+     * @param flashPromotionId
+     * @param flashPromotionSessionId
+     * @return
      */
     long getCount(Long flashPromotionId,Long flashPromotionSessionId);
 }

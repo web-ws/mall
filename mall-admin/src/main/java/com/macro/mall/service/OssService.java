@@ -11,11 +11,11 @@ import javax.servlet.http.HttpServletRequest;
  */
 public interface OssService {
     /**
-     * Oss上传策略生成
+     * oss上传策略生成
      */
     OssPolicyResult policy();
     /**
-     * Oss上传成功回调
+     * oss上传成功回调
      */
     OssCallbackResult callback(HttpServletRequest request);
 }
